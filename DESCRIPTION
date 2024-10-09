@@ -1,0 +1,17 @@
+Package: org.Hbacteriophora.eg.db
+Title: Genome wide annotation for Heterorhabditis bacteriophora
+Description: Genome wide annotation for Heterorhabditis bacteriophora, primarily based on mapping using Entrez Gene identifiers.
+Version: 0.1
+Authors@R: c(
+  person("Lalson Wesly", "Johnson", email = "WESLYJOHNZEN@gmail.com", role = "aut"),
+  person("Kabilan", "S", email = "kabilan151414@gmail.com", role = c("aut", "cre")))
+Maintainer: Kabilan S <kabilan151414@gmail.com>
+Depends: R (>= 4.4.0), methods, AnnotationDbi (>= 1.66.0)
+Imports: AnnotationHub
+Suggests: DBI, annotate, RUnit,knitr, rmarkdown
+VignetteBuilder: knitr
+License: Artistic-2.0
+organism: Heterorhabditis bacteriophora
+species: Heterorhabditis bacteriophora
+biocViews: OrgDb, AnnotationData, AnnotationHub
+RoxygenNote: 7.3.2

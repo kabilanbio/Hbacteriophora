@@ -1,0 +1,47 @@
+---
+title: "Annotation Package for Heterorhabditis bacteriophora"
+author: "Lalson Wesly Johnson"
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Annotation Package for Heterorhabditis bacteriophora}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+This package provides annotation data for the *Heterorhabditis bacteriophora* organism. It includes gene information, functional annotations, and mappings to various biological databases, derived from the NCBI gene information system.
+
+```r
+# Installation
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("org.Hbacteriophora.eg")
+```
+
+```r
+#Loading the Package
+library(org.Hbacteriophora.eg.db)
+```
+
+```r
+#Accessing Gene Information
+columns(org.Hbacteriophora.eg.db)  # List available fields
+keys <- head(keys(org.Hbacteriophora.eg.db, keytype="ENTREZID"))  # Get sample gene IDs
+select(org.Hbacteriophora.eg.db, keys=keys, columns=c("GENENAME", "SYMBOL"), keytype="ENTREZID")
+```
+
+```r
+#Querying GO Terms
+select(org.Hbacteriophora.eg.db, keys=keys, columns=c("GO", "ONTOLOGY"), keytype="ENTREZID")
+```
+
+Reference:
+
+NCBI: https://www.ncbi.nlm.nih.gov/
+
+```r
+sessionInfo()
+```
+
